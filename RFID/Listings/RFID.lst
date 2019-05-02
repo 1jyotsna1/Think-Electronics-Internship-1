@@ -1,0 +1,92 @@
+C51 COMPILER V9.57.0.0   RFID                                                              12/29/2017 20:10:23 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE RFID
+OBJECT MODULE PLACED IN .\Objects\RFID.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE RFID.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\RFID
+                    -.lst) TABS(2) OBJECT(.\Objects\RFID.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void check();
+   3            unsigned char sap1[11]={"60001150008"};
+   4            unsigned char stu1[]={"Manan Doshi"};
+   5            unsigned char sap2[11]={"60001150010"};
+   6            unsigned char stu2[]={"Rajat Doshi"};
+   7            unsigned char sap3[11]={"60001150049"};
+   8            unsigned char stu3[]={"Monica Shah"};
+   9            unsigned char a[11];
+  10            unsigned char x;
+  11            void main()
+  12          {
+  13   1        SCON=0x50;
+  14   1        TMOD=0x30;
+  15   1        TH1=-3;
+  16   1        TR1=1;
+  17   1        while(1)
+  18   1        {
+  19   2          for(x=0;x<10;x++)
+  20   2          {
+  21   3            while(RI==0)
+  22   3              a[x]=SBUF;
+  23   3            SBUF=a[x];
+  24   3            while(TI==0)
+  25   3              RI==0;
+*** WARNING C275 IN LINE 25 OF RFID.c: expression with possibly no effect
+  26   3            TI==0;
+*** WARNING C275 IN LINE 26 OF RFID.c: expression with possibly no effect
+  27   3          }
+  28   2          check();
+  29   2        } }
+  30          
+  31            void check()
+  32            {
+  33   1          if(a[0]=='6' & a[1]=='0' & a[2]=='0' & a[3]=='0' & a[4]=='1' & a[5]=='1' & a[6]=='5' & a[7]=='0' & a[8]=
+             -='0' & a[9]=='0' & a[10]=='8')
+  34   1          {
+  35   2            for(x=0;x<10;x++)
+  36   2            {
+  37   3              SBUF=stu1[x];
+  38   3              while(TI==0)
+  39   3                TI=0;
+  40   3            } }
+  41   1          
+  42   1        if(a[0]=='6' & a[1]=='0' & a[2]=='0' & a[3]=='0' & a[4]=='1' & a[5]=='1' & a[6]=='5' & a[7]=='0' & a[8]==
+             -'0' & a[9]=='1' & a[10]=='0')
+  43   1          {
+  44   2            for(x=0;x<10;x++)
+  45   2            {
+  46   3              SBUF=stu2[x];
+  47   3              while(TI==0)
+  48   3                TI=0;
+  49   3            }   }
+  50   1          
+C51 COMPILER V9.57.0.0   RFID                                                              12/29/2017 20:10:23 PAGE 2   
+
+  51   1            if(a[0]=='6' & a[1]=='0' & a[2]=='0' & a[3]=='0' & a[4]=='1' & a[5]=='1' & a[6]=='5' & a[7]=='0' & a[8]
+             -=='0' & a[9]=='4' & a[10]=='9')
+  52   1          {
+  53   2            for(x=0;x<10;x++)
+  54   2            {
+  55   3              SBUF=stu3[x];
+  56   3              while(TI==0)
+  57   3                TI=0;
+  58   3            } }
+  59   1          }
+  60            
+  61            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    581    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     81    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

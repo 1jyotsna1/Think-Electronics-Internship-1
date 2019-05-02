@@ -1,0 +1,92 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/29/2017  11:42:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\blinkleds.obj TO .\Objects\blinkleds PRINT (.\Listings\blinkleds.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\blinkleds.obj (BLINKLEDS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\blinkleds (BLINKLEDS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0020H     UNIT         ?PR?_DELAY?BLINKLEDS
+            CODE    0820H     0015H     UNIT         ?PR?MAIN?BLINKLEDS
+            CODE    0835H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\blinkleds (BLINKLEDS)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BLINKLEDS
+
+?PR?MAIN?BLINKLEDS
+  +--> ?PR?_DELAY?BLINKLEDS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\blinkleds (BLINKLEDS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINKLEDS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0800H         PUBLIC        _delay
+  C:0820H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/29/2017  11:42:50  PAGE 2
+
+
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         4
+  C:0800H         LINE#         6
+  C:0800H         LINE#         8
+  C:0811H         LINE#         9
+  C:081FH         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0820H         LINE#         11
+  C:0820H         LINE#         12
+  C:0820H         LINE#         13
+  C:0820H         LINE#         14
+  C:0820H         LINE#         15
+  C:0823H         LINE#         16
+  C:0829H         LINE#         17
+  C:082CH         LINE#         18
+  C:0833H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BLINKLEDS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0035H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=68
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
